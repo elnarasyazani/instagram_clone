@@ -1,4 +1,6 @@
+import PostsGrid from "@/components/PostsGrid";
 import { CheckIcon, ChevronLeft, CogIcon } from "lucide-react";
+import Link from "next/link";
 
 export default function ProfilePage() {
   return (
@@ -13,9 +15,9 @@ export default function ProfilePage() {
             <CheckIcon size={16}/>
           </div>
         </div>
-        <button>
+        <Link href={'/settings'}>
           <CogIcon />
-        </button>
+        </Link>
       </section>
 
       <section className="mt-8 flex justify-center">
@@ -40,8 +42,15 @@ export default function ProfilePage() {
         </p>
       </section>
 
-      <section>
+      <section className="mt-4">
+        <div className="flex justify-center gap-4 font-bold">
+          <Link href={""}>Posts</Link>
+          <Link className="text-gray-400" href={"/highlights"}>HighLights</Link>
+        </div>
+      </section>
 
+      <section className="mt-4">
+        <PostsGrid />
       </section>
     </main>
 
