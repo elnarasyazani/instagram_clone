@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { auth, signIn, signOut } from "../../auth"
 
 
@@ -12,7 +13,9 @@ export default async function Home() {
         await signOut()
       }}
     >
-      <button type="submit" className="bg-ig-red p-2 m-4 rounded-lg"><img src={session.user?.image} />{session.user?.name} Sign Out</button>
+      <button type="submit" className="bg-ig-red p-2 m-4 rounded-lg">  
+        <img src={session?.user?.image} alt="ss" width={100} height={100}/>{session.user?.name} Sign Out
+      </button>
     </form>
     )}
 
